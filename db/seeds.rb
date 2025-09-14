@@ -13,3 +13,11 @@ User.find_or_create_by!(email: "john.doe@example.com") do |user|
   user.password = "password"
   user.user_type = :adopter
 end
+
+Animal.find_or_create_by!(name: "Buddy") do |animal|
+  animal.specie = "Dog"
+  animal.status = "Available"
+  animal.breed = "Golden Retriever"
+  animal.description = "A friendly and energetic dog."
+  animal.photo = "https://example.com/photos/buddy.jpg"
+end
