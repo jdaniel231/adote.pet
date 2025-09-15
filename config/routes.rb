@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
       resources :home
       resources :animals
+      resources :organizations
       
       # Outros recursos, como adoções, mensagens, etc., virão aqui
     end
