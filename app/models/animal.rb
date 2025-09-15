@@ -5,4 +5,5 @@ class Animal < ApplicationRecord
 
   belongs_to :organization, optional: true
   has_many :adoptions, dependent: :destroy
+  has_many_attached :photos
 end
