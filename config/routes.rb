@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       resources :home
       resources :animals
       resources :organizations
+      resources :adoptions
       
       # Outros recursos, como adoções, mensagens, etc., virão aqui
     end

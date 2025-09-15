@@ -5,6 +5,7 @@ class User < ApplicationRecord
   enum user_type: { adopter: 0, organization: 1, admin: 2 }
 
   has_many :organizations, dependent: :destroy
+  has_many :adoptions, dependent: :destroy
 
   validates :email, presence: true, uniqueness: true
   validates :name, presence: true

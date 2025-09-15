@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_09_15_011204) do
+ActiveRecord::Schema[7.1].define(version: 2025_09_15_012459) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "adoptions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "animal_id", null: false
+    t.string "status"
+    t.jsonb "form_data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["animal_id"], name: "index_adoptions_on_animal_id"
+    t.index ["user_id"], name: "index_adoptions_on_user_id"
+  end
 
   create_table "animals", force: :cascade do |t|
     t.string "name"
@@ -54,5 +65,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_09_15_011204) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "adoptions", "animals"
+  add_foreign_key "adoptions", "users"
   add_foreign_key "organizations", "users"
 end
