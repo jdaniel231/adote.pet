@@ -36,6 +36,6 @@ class Api::V1::AnimalsController < ApplicationController
   private
 
   def animal_params
-    params.permit(:name, :specie, :status, :breed, :description, :photo)
+    params.permit(:name, :specie, :status, :breed, :description, :photo, :organization_id)
   end
 end
